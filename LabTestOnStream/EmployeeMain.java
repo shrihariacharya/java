@@ -10,7 +10,6 @@ public class EmployeeMain
 
 	public static void main(String[] args)
 	{
-		
 		ArrayList <Employee> emp=new ArrayList<>();
 		
 		Employee em1=new Employee("Abhi",23,"Development",34000);
