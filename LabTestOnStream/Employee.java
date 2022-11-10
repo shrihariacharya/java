@@ -2,7 +2,6 @@ package problems;
 
 public class Employee
 {
-	
 	//data members of employee class
 	private String name;
 	private int age;
@@ -63,7 +62,5 @@ public class Employee
 	public String toString() 
 	{
 		return "Name=" + name + ", Age=" + age + ", Dept=" + dept + ", Salary=" + salary +";";
-	}
-	
-	
+	}	
 }
