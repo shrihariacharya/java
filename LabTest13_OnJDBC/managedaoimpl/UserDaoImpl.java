@@ -3,10 +3,8 @@ package managedaoimpl;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
 import manageconnection.ConnectionProvider;
 import managedao.UserDao;
-
 import java.sql.SQLException;
 
 
