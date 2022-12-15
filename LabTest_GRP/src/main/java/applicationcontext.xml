@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<tx:annotation-driven />
+
+
+
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="ds">
+
+		<property value="com.mysql.cj.jdbc.Driver"
+			name="driverClassName" />
+
+		<property value="jdbc:mysql://localhost:3306/mydb1"
+			name="url" />
+
+		<property value="root" name="username" />
+
+		<property value="Shri1234" name="password" />
+
+	</bean>
+
+
+
+	<bean
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+		id="sessionFactory1">
+
+		<property name="dataSource" ref="ds" />
+
+
+
+		<property name="hibernateProperties">
+
+
+
+			<props>
+
+				<prop key="hibernate.show_sql">true</prop>
+
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+
+			</props>
+
+		</property>
+
+
+
+		<property name="annotatedClasses">
+
+
+
+			<list>
+
+				<value>com.springorm.StudentMgt.entities.Student </value>
+
+			</list>
+
+		</property>
+
+	</bean>
+
+
+
+	<bean class="org.springframework.orm.hibernate5.HibernateTemplate"
+		id="template">
+
+		<property name="sessionFactory" ref="sessionFactory1" />
+
+	</bean>
+
+
+
+	<bean
+		class="EmployeeManagment.LabTest_grpProject.DaoImpl.EmployeeDaoImpl"
+		id="empdao">
+
+		<property name="ht" ref="template" />
+
+	</bean>
+	
+	<bean
+		class="EmployeeManagment.LabTest_grpProject.DaoImpl.DepartmentDaoImpl"
+		id="deptdao">
+
+		<property name="ht" ref="template" />
+
+	</bean>
+
+
+	
+	<bean class="EmployeeManagment.LabTest.Entities.Employee"
+		id="Emp1">
+
+		<property value="1" name="eid" />
+
+		<property value="Shrihari" name="ename" />
+
+		<property value="1234567890" name="econtact" />
+
+	</bean>
+
+
+	
+	<bean class="EmployeeManagment.LabTest.Entities.Employee"
+		id="Emp2">
+
+		<property value="2" name="eid" />
+
+		<property value="Ashish" name="ename" />
+
+		<property value="2134567890" name="econtact" />
+
+	</bean>
+
+
+	
+	<bean class="EmployeeManagment.LabTest.Entities.Employee"
+		id="Emp3">
+
+		<property value="4" name="eid" />
+
+		<property value="Prachi" name="ename" />
+
+		<property value="3214567890" name="econtact" />
+
+	</bean>
+
+
+	
+	<bean class="EmployeeManagment.LabTest.Entities.Employee"
+		id="Emp4">
+
+		<property value="4" name="eid" />
+
+		<property value="Neha" name="ename" />
+
+		<property value="4321567890" name="econtact" />
+
+	</bean>
+
+
+	
+	<bean class="com.product.entities.Customer" id="dept1">
+
+		<property value="101" name="did" />
+
+		<property value="Computer Science" name="dname" />
+
+	</bean>
+
+
+	
+	<bean class="com.product.entities.Customer" id="dept2">
+
+		<property value="102" name="did" />
+
+		<property value="Information Technology" name="dname" />
+
+	</bean>
+
+		<bean class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+			name="transactionManager">
+
+			<property name="sessionFactory" ref="sessionFactory1" />
+
+		</bean>
+
+</beans>
