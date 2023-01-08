@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<h1>Calculator</h1>
+
+<h1 style="color: chocolate; font-size: larger;"> This is calculator using interpolation</h1>
+<input type="text" #n1 name="n1"><br>
+<input type="text" #n2 name="n2"><br>
+
+<button (click)="add(n1.value,n2.value)">addision</button> <br><br>
+<button (click)="sub(n1.value,n2.value)">substraction</button> <br><br>
+<button (click)="mul(n1.value,n2.value)">multiplication</button> <br><br>
+<button (click)="div(n1.value,n2.value)">division</button><br><br>
+
+<h1 style="color:chocolate; font-size:x-large;"> This is to print calucators values on console</h1>
+ addtion: <h3>{{r1}}</h3>
+ substraction: <h3>{{r2}}</h3>
+ multiplication: <h3>{{r3}}</h3>
+ division: <h3>{{r4}}</h3>
+
+ <h1 style="color:chocolate; font-size: x-large;"> Creating object using interpolation</h1>
+ <h2> Student details:</h2>
+ <b>Id: {{Student.Id}}<br></b>
+ <b>Name: {{Student.Name}}<br></b>
+ <b>Contact: {{Student.Contact}}<br></b>
+
+
+<!--
+ <h1 > Mouse and key event</h1>
+ <input type="text" #txt1 (keyup.enter)="getmsg()"><br>
+ <p (mouseup)="getMouseUp()">Mouse event done</p>
+ <h1> {{msg}}</h1>
+
+ 
+<h1 style="color:chocolate; font-size: x-large;"> This is one way data binding through interpolation</h1>
+<p [class]="t">this is testing</p>
+<p [class]="r">this is running</p>
+
+<label><b>Color: </b></label>
+<input type="radio" #color1 name="color1" value="red" (click)="getcolor('red')">Red
+<input type="radio" #color1 name="color1" value="blue" (click)="getcolor('blue')">blue
+<input type="radio" #color1 name="color1" value="Green" (click)="getcolor('green')">green
+<button [class] ="r" (click)="getcolor(color1.value)">Change Color</button>
+<h1 [class]="tcolor">Changing Color</h1>
+
+<select #color1>
+<option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="orange">Orange</option>
+</select>-->
